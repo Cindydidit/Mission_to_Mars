@@ -1,0 +1,331 @@
+$(document).ready(function() {
+
+
+    $(".icon1").on("click", function(e) {
+
+        $('#column').show();
+        $('.div1').hide();
+    });
+    $(".icon2").on("click", function(e) {
+        $('#column').hide();
+        $('.div1').show();
+    });
+
+
+    var images = ["featured/mars1.jpg", "featured/mars2.jpg", "featured/mars3.jpg"];
+    $('<img class="headerimage fade-in" src="image/' + images[Math.floor(Math.random() * images.length)] + '">').appendTo('.header');
+	$('.showimg').attr('href', $('.headerimage').attr('src'))
+
+
+
+    /**  On page load, display images without filter **/
+    $.getJSON("json/demo.json", function(data) {
+
+
+
+        var filteredOption = data.filter(
+
+            function(img) {
+                return img.Category == "mars";
+            }
+        );
+
+
+        $.each(filteredOption, function(i) {
+            //            imgList = '<img src= "' + this.image + '";>';
+            //imgList = '<img src= "' + this.image + '";>';
+            imgList = '<a class="fancybox-thumbs" data-fancybox-group="thumb" href="' + this.image + '"><div class="thmb"><img class="thumbimg" src="' + this.image + '" alt="" /><p class="thumbcontent">'+this.date+'<br>'+this.title+'</p></div></a>';
+		
+            $("#filter .thmbgroup").append(imgList);
+
+        });
+        $('.fancybox-thumbs').fancybox({
+            prevEffect: 'none',
+            nextEffect: 'none',
+
+            closeBtn: true,
+            arrows: true,
+            nextClick: true,
+
+            helpers: {
+                thumbs: {
+                    width: 50,
+                    height: 50
+                }
+            }
+        });
+
+
+        
+        /** /All-Ends */
+        /** FILTER-STARTS: **/
+        $("#options").change(function() {
+
+            const selectedOption = $("#options").val();
+            var imgList = ""; // your line
+            var clearDiv = $("#filter").empty();
+
+
+
+            if (selectedOption == "Mars") {
+                clearDiv;
+
+                var filteredOption = data.filter(
+
+                    function(img) {
+                        return img.Category == selectedOption.toLowerCase()
+                    }
+
+                );
+
+                $.each(filteredOption, function() {
+                    imgList = '<img src= "' + this.image + '";>';
+                    $("#filter").append(imgList);
+                });
+
+
+            } else if (selectedOption == "Earth") {
+                clearDiv;
+                var filteredOption = data.filter(
+                    (img) => img.Category == selectedOption.toLowerCase()
+                );
+                console.log(filteredOption);
+                $.each(filteredOption, function() {
+                    imgList = '<img src= "' + this.image + '";>';
+                    $("#filter").append(imgList);
+                });
+            } else if (selectedOption == "Ida") {
+                clearDiv;
+                var filteredOption = data.filter(
+                    (img) => img.Category == selectedOption.toLowerCase()
+                );
+                console.log(filteredOption);
+                $.each(filteredOption, function() {
+                    imgList = '<img src= "' + this.image + '";>';
+                    $("#filter").append(imgList);
+                });
+            } else if (selectedOption == "Jupiter") {
+                clearDiv;
+                var filteredOption = data.filter(
+                    (img) => img.Category == selectedOption.toLowerCase()
+                );
+                console.log(filteredOption);
+                $.each(filteredOption, function() {
+                    imgList = '<img src= "' + this.image + '";>';
+                    $("#filter").append(imgList);
+                });
+            } else if (selectedOption == "Sun") {
+                clearDiv;
+                var filteredOption = data.filter(
+                    (img) => img.Category == selectedOption.toLowerCase()
+                );
+                console.log(filteredOption);
+                $.each(filteredOption, function() {
+                    imgList = '<img src= "' + this.image + '";>';
+                    $("#filter").append(imgList);
+                });
+            } else if (selectedOption == "Venus") {
+                clearDiv;
+                var filteredOption = data.filter(
+                    (img) => img.Category == selectedOption.toLowerCase()
+                );
+                console.log(filteredOption);
+                $.each(filteredOption, function() {
+                    imgList = '<img src= "' + this.image + '";>';
+                    $("#filter").append(imgList);
+                });
+            } else if (selectedOption == "earth") {
+                clearDiv;
+                var filteredOption = data.filter(
+                    (img) => img.Category == selectedOption.toLowerCase()
+                );
+                console.log(filteredOption);
+                $.each(filteredOption, function() {
+                    imgList = '<img src= "' + this.image + '";>';
+                    $("#filter").append(imgList);
+                });
+            } else {
+                $.each(data, function() {
+                    imgList = '<img src= "' + this.image + '";>';
+                    $("#filter").append(imgList);
+                });
+            }
+        });
+        /** /FILTER-ENDS */
+    });
+
+});
+
+$(".thmbgroup").on('mouseenter', '.thmb', function () {
+$(this).children('img').hide();
+$(this).children('.thumbcontent').show();
+});
+
+$(".thmbgroup").on('mouseleave', '.thmb', function () {
+	$(this).children('.thumbcontent').hide();
+$(this).children('img').show();
+});
+
+$("#options").change(function() {
+    $.getJSON("json/item.json", function(data) {
+
+
+        var titleList = "";
+        var bodyList = "";
+        var imgList = "";
+        var date;
+        var clearDiv = $('.post-heading').empty();
+
+        const selectedOption1 = $("#options").val();
+        console.log(selectedOption1)
+
+        if (selectedOption1 == "Mars") {
+            clearDiv;
+
+            var filtered = data.filter(
+
+                function(detail) {
+                    console.log(detail.category == selectedOption1.toLowerCase())
+                    return detail.category == selectedOption1.toLowerCase()
+
+                });
+
+            // $.each(filteredOption, function () {
+            // 	imgList = '<img src= "' + this.image + '";>';
+            // 	$("#filter").append(imgList); 
+            // });
+
+            $.each(filtered, function(key, val) {
+
+                titleList = val.title;
+                bodyList = val.body;
+                imgList = '<img class="img-fluid" alt="Responsive image" src= "' + val.image + '">';
+                date = val.date;
+
+                $('.post-heading').append('<hr><div class="container"><div class="row"><div class="col-md-4 col-sm-12">' + imgList + '</div><div class="col-md-8 col-sm-12"><p>' + date + '</p><h2>' + titleList + '</h2><lead>' + bodyList + '</lead><br></div></div></div>')
+
+            });
+        } else(selectedOption1 == "sun")
+        clearDiv;
+
+        var filtered = data.filter(
+
+            function(detail) {
+
+                return detail.category == selectedOption1.toLowerCase()
+
+            });
+
+        $.each(filtered, function(key, val) {
+
+            titleList = val.title;
+            bodyList = val.body;
+            imgList = '<img class="img-fluid" alt="Responsive image" src= "' + val.image + '">';
+            date = new Date();
+
+            $('.post-heading').append('<hr><div class="container"><div class="row"><div class="col-md-4 col-sm-12">' + imgList + '</div><div class="col-md-8 col-sm-12"><p>' + date + '</p><h2>' + titleList + '</h2><lead>' + bodyList + '</lead><br></div></div></div>')
+
+        });
+
+    });
+});
+
+
+
+
+/** DUPLICATE CODE- NEED TO WRITE SEPARATE METHOD */
+
+
+$(".icon1").on("click", function() {
+    $.getJSON("json/item.json", function(data) {
+
+
+        var titleList = "";
+        var bodyList = "";
+        var imgList = "";
+        var date;
+        var clearDiv = $('.icon1').empty();
+
+        const selectedOption1 = $("#options").val();
+        console.log(selectedOption1)
+
+        if (selectedOption1 == "Sun") {
+            clearDiv;
+
+            var filtered = data.filter(
+
+                function(detail) {
+                    return detail.category == selectedOption1.toLowerCase()
+
+                });
+
+
+            $.each(filtered, function(key, val) {
+                $(".icon1").empty();
+
+                titleList = val.title;
+                bodyList = val.body;
+                imgList = '<img class="img-fluid" alt="Responsive image" src= "' + val.image + '">';
+                date = new Date();
+
+                $('.post-heading').append('<hr><div class="container"><div class="row"><div class="col-md-4 col-sm-12">' + imgList + '</div><div class="col-md-8 col-sm-12"><p>' + date + '</p><h2>' + titleList + '</h2><lead>' + bodyList + '</lead><br></div></div></div>')
+
+            });
+        } else(selectedOption1 == "mars")
+        clearDiv;
+
+        var filtered = data.filter(
+
+            function(detail) {
+
+                return detail.category == selectedOption1.toLowerCase()
+
+            });
+
+        $.each(filtered, function(key, val) {
+            $(".icon2").empty();
+            titleList = val.title;
+            bodyList = val.body;
+			console.log(val);
+			date = val.year;
+            // imgList = '<img class="img-fluid" alt="Responsive image" src= "' + val.image + '">';
+			imgList = '<a class="fancybox-thumbs" data-fancybox-group="thumb" href="' + this.image + '"><img src="' + this.image + '" alt="" /></a>';
+			
+			$('.fancybox-thumbs').fancybox({
+            prevEffect: 'none',
+            nextEffect: 'none',
+
+            closeBtn: true,
+            arrows: true,
+            nextClick: true,
+
+            helpers: {
+                thumbs: {
+                    width: 50,
+                    height: 50
+                }
+            }
+        });
+			
+           
+
+            $('.post-heading').append('<hr><div class="container"><div class="row"><div class="col-md-4 col-sm-12">' + imgList + '</div><div class="col-md-8 col-sm-12"><p>' + date + '</p><h2>' + titleList + '</h2><lead>' + bodyList + '</lead><br></div></div></div>')
+
+        });
+
+
+
+
+    });
+});
+
+
+function fullimage(){
+$('.fullimage').attr('src',$('.headerimage').attr('src'))	
+$('.showFullimage').show();
+}
+
+function hideimage(){
+	$('.showFullimage').hide();
+
+}

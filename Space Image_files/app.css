@@ -1,0 +1,422 @@
+.header
+{
+	/*background-image: url("https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA15254-1920x1200.jpg");
+	background-size: cover;*/
+	/*height: 700px;*/
+	height: 100%;
+	position: relative;
+}
+
+.navbar .nav-item {
+    background-color: #4A698E;
+    color: #fff !important;
+    border-radius: 5px;
+}
+
+.navbar .nav-item a{
+	text-decoration: none;
+	color: #fff;
+}
+#logo {width: 85px;
+    height: 76px;}
+
+.logo{
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff!important;
+    margin-top: -14px;
+}
+.logo1{
+	font-weight: normal;
+    font-size: 17px;
+    display: block;
+    margin-left: 92px;
+    margin-top: -35px;
+    color: #fff!important;
+}
+
+.floating_text_area{
+	/*color: #fff;
+	display: block;
+	margin: 0px auto  0px !important;
+	position: absolute;
+	bottom: 0;
+	left: 559px;
+	text-align: center;*/
+	color: #fff;
+    display: block;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: 4%;
+    text-align: center;
+    vertical-align: baseline;
+}
+.floating_text_area .brand_title{
+    font-size: .9em;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.floating_text_area .media_feature_title{
+    font-weight: 600;
+    line-height: 1.2em;
+    margin-bottom: .18em;
+}
+.btn-outline-light{
+    border-radius: 12px;
+    color: #FFF;
+    font-weight: 600;
+    padding: 8px 15px;
+}
+.search{
+	padding: 30px 0px;
+	background-color: #E4E9EF;
+}
+.sticky{
+    position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 30px 0px;
+  background-color: #E4E9EF;
+  z-index: 1;
+}
+input{
+	width: 30%;
+	    background-color: #fff;
+    color: #222;
+        font-weight: 500;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    height: 40px;
+    padding-left: 1.1em;
+    padding-right: 40px;
+    float: right;
+
+}
+
+select{
+	margin: 0 auto .5em;
+    float: none;
+    width: 200px;
+    max-width: 380px;
+    padding: .5em 1em;
+    font-size: 16px;
+    border: 0;
+    height: 40px;
+    vertical-align: middle;
+    color: white;
+    background: #4b6a8d url(https://www.jpl.nasa.gov/assets/images/arrows_select_box.png) no-repeat 94% 10px;
+    font-weight: 600;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+
+.icon1{
+        display: inline-block;
+    position: relative;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    background-image: url(https://www.jpl.nasa.gov/assets/images/grid_list_icon.png);
+    background-color: #e4e9ef;
+    border-radius: 50%;
+    float: right;
+    background-position: -4px -51px;
+    margin-right: 10px;
+}
+.icon2{
+    display: inline-block;
+    position: relative;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    background-image: url(https://www.jpl.nasa.gov/assets/images/grid_list_icon.png);
+    background-color: #e4e9ef;
+    border-radius: 50%;
+    float: right;
+    background-position: -59px -0px;
+
+}
+
+
+
+.first img{
+    width: 100%;
+    height: 100%;
+    
+}
+
+ .imgcontainer div{ 
+	display:inline-block; 
+ } 
+
+  img {   
+	  margin:5px;   
+	   width:260px;   
+	  height:200px;  
+	  padding-top:2px;
+   }  
+
+.first .col-md-3{
+    padding: 8px;
+}
+.module_gallery{
+    padding: 50px;
+}
+.module_gallery .card{
+    border: none;
+}
+
+.module_gallery .card-floating_text_area{
+    color: #0E7EE0;
+}
+.search_btn{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #3b788b;
+    color: white;
+    line-height: 1em;
+    border: 0;
+    text-decoration: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-shadow: none;
+    padding: 12px 24px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    display: block;
+    margin-bottom: 24px;
+}
+
+.multi_teaser{
+    background-color: #E4E9EF;
+    padding: 100px 0px;
+}
+
+.multi_teaser h1{
+        text-align: center;
+    font-weight: 700;
+    letter-spacing: -.04em;
+}
+.multi_teaser .card{
+   border: none; 
+}
+.multi_teaser .card-body{
+background-color: #E4E9EF;
+letter-spacing: 0;
+    font-weight: 600;
+}
+.footer{
+    padding: 50px 0px;
+    background-color: #000000;
+    color: #fff;
+}
+.footer ul{
+ list-style: none;
+ padding-left: 0px;
+ color: #95A6A7;
+}
+
+#filter{margin-top: 68px;}
+
+#column{display:none}
+
+.fade-in{
+  -webkit-animation: fade-in 2s ease;
+  -moz-animation: fade-in ease-in-out 2s both;
+  -ms-animation: fade-in ease-in-out 2s both;
+  -o-animation: fade-in ease-in-out 2s both;
+  animation: fade-in 2s ease;
+  visibility: visible;
+  -webkit-backface-visibility: hidden;
+/* background-size: cover;
+	height: 703px;
+    width: 100%;
+    margin-top: -118px;*/
+        background-size: cover;
+    height: 50em;
+    width: 100%;
+    margin-top: -118px;
+    margin-bottom: 0px; 
+    margin-right: 0px;
+    margin-left: 0px;
+}
+/* To remove bullet sign from ul */
+li.post-heading {
+    list-style-type:none;
+}
+
+.overlay {
+  position: absolute;
+  
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.slide:hover .rollover_description{
+    padding: 20px 10px;
+    position: absolute;
+    opacity: 1;       
+    color: white;
+    height: 30%;
+    width: 18%;
+    display: block;
+    background-color: rgba(67,93,122,0.95);
+    cursor: pointer;
+	
+}
+
+.post-list h2:hover{
+	color: #366599;
+    cursor: pointer;
+}
+
+/*.fancybox-thumbs img:hover{
+background-color: #366599;
+opacity: 0.8;
+
+}*/
+
+
+.fancybox-overlay{
+  background: #000 !important;
+    opacity: 1 !important;
+}
+
+.div1 img:hover {
+  
+  /* opacity: 0.3; */
+  
+}
+
+
+.rollover_description{
+    opacity: 0;
+    height: 0;
+    z-index: 1;
+    overflow: hidden;
+}
+.slide:hover .rollover_description{
+    padding: 20px 10px;
+    position: absolute;
+    opacity: 1;       
+    color: white;
+    height: 65%;
+    width: 90%;
+    display: block;
+    background-color: rgba(67,93,122,0.95);
+    cursor: pointer;
+}
+.release_date {
+    font-size: .9em;
+    margin-bottom: .3em;
+    display: inline-block;
+}
+.rollover_description .item_tease_overlay {
+    color: white;
+        position: relative;
+        overflow: hidden;
+}
+.item_tease_overlay {
+    margin-top: .3em;
+    overflow: hidden;
+}
+
+.image_and_description_container{
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left :0;
+    width: 100%;
+    height: 100%;
+    padding: 7px 11px 7px 20px;
+}
+#filter .image-caption {
+	display: none;
+	opacity: 0.8;
+	background:#cae5c1;
+	width: 290px;
+	position: absolute;
+	bottom: 0px;
+	padding: 5px;
+}
+
+.thmbgroup {
+display: flex;
+    flex-wrap: wrap;
+}
+a {text-decoration: none;} 
+.thumbcontent{
+    margin: 5px;
+    width: 260px;
+    height: 200px;
+    padding-top: 2px;	
+display: none;
+    background: #022246b8;
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+}
+
+.fancybox-skin{
+    background: #2A2A2A !important;
+}
+
+.bottom ul{
+left: 0px !important;
+}
+
+#fancybox-thumbs{
+    background: #2a2a2a !important;
+}
+
+#fancybox-thumbs ul li{
+    border: 2px solid #909090 !important;
+    margin: 4px;
+}
+
+.showFullimage {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: none;
+	background: #60656af2;
+	z-index: 999;
+}
+
+.hideimage {
+
+position: fixed;
+
+top: 10px;
+
+right: 10px;
+}
+
+.showFullimage img {
+position: fixed;
+    top: 22%;
+}
