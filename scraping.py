@@ -54,6 +54,9 @@ def mars_news(browser):
         #news_p
     except AttributeError:
         return None, None
+    
+    return news_title, news_p
+
 
 # ## JPL Space Images Featured Image
 
@@ -107,6 +110,7 @@ def mars_facts():
     return df.to_html()
 
 
-#browser.quit()
+if __name__ == "__main__":
 
-
+    # If running as script, print scraped data
+    print(scrape_all())
